@@ -13,8 +13,12 @@ namespace AddressBook
             Console.WriteLine("Welcome To Address Book Program");
             AddressBook addressBook = new AddressBook();
             TakeInputAndAddToContacts(addressBook);
-            //takeInputAndAddToContacts(addressBook);
             addressBook.print();
+            Console.WriteLine("Enter FirstName of Contact to be edited");
+            string firstNameOfContactToBeEdited = Console.ReadLine();
+            Console.WriteLine("Enter LastName of Contact to be edited");
+            string lastNameOfContactToBeEdited = Console.ReadLine();
+            addressBook.edit(firstNameOfContactToBeEdited, lastNameOfContactToBeEdited);
             Console.ReadLine();
       }
         public static void TakeInputAndAddToContacts(AddressBook addressBook)
