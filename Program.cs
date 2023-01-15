@@ -4,17 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AddressBook
+namespace AddressBookSystem
 {
-    public class Program
+    class Program
     {
-      static void Main(string[] args)
-      {
-            Console.WriteLine("Welcome To Address Book Program");
-            AddressBook addressBook = new AddressBook();
-            TakeInputAndAddToContacts(addressBook);
+        static void Main(string[] args)
+        {
+             AddressBook addressBook = new AddressBook();
+            Console.WriteLine("Enter how many contacts you want to add");
+            int number = Convert.ToInt32(Console.ReadLine());
+            for (int number_i = 1; number_i <= number; number_i++)
+            {
+                takeInputAndAddToContacts(addressBook);
+            }
             addressBook.print();
-            Console.WriteLine(" Press 1 for Edit the details ,\n Press 2 for Delete  details : ");
+
+
+            Console.WriteLine("Press 1 for Edit the details ,\n Press 2 for Delete  details : ");
             int Selectchoice = Convert.ToInt32(Console.ReadLine());
             switch (Selectchoice)
             {
@@ -24,6 +30,7 @@ namespace AddressBook
                     string firstNameOfContactToBeEdited = Console.ReadLine();
                     Console.WriteLine("Enter LastName of Contact to be edited");
                     string lastNameOfContactToBeEdited = Console.ReadLine();
+                    addressBook.edit(firstNameOfContactToBeEdited, lastNameOfContactToBeEdited);
                     break;
                 case 2:
                     Console.WriteLine("Enter FirstName of Contact to be deleted");
@@ -37,8 +44,8 @@ namespace AddressBook
                     break;
             }
             Console.ReadLine();
-      }
-        public static void TakeInputAndAddToContacts(AddressBook addressBook)
+        }
+        public static void takeInputAndAddToContacts(AddressBook addressBook)
         {
             Console.WriteLine("Enter FirstName");
             string firstName = Console.ReadLine();

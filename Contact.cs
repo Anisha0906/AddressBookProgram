@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AddressBook
+namespace AddressBookSystem
 {
-    public class Contact
+   class Contact
     {
         public string fistName { get; set; }
         public string lastName { get; set; }
