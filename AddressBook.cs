@@ -9,7 +9,8 @@ namespace AddressBookSystem
     class AddressBook
     {
       private List<Contact> contactList;
-       public AddressBook()
+        public Dictionary<string, AddressBook> AddBook;
+        public AddressBook()
         {
        
             contactList = new List<Contact>();
@@ -46,7 +47,7 @@ namespace AddressBookSystem
         public void edit(string firstName, string lastName)
         {
 
-            Contact contactToBeEdited = null;
+          //  Contact contactToBeEdited = null;
 
             foreach (Contact contact in this.contactList)
             {

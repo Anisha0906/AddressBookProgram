@@ -11,11 +11,16 @@ namespace AddressBookSystem
         static void Main(string[] args)
         {
              AddressBook addressBook = new AddressBook();
-            Console.WriteLine("Enter how many contacts you want to add");
-            int number = Convert.ToInt32(Console.ReadLine());
-            for (int number_i = 1; number_i <= number; number_i++)
+            Console.WriteLine("Enter how many addressbook you want to add");
+            int num = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= num; i++)
             {
-                takeInputAndAddToContacts(addressBook);
+                Console.WriteLine("Enter how many contacts you want to add");
+                int number = Convert.ToInt32(Console.ReadLine());
+                for (int number_i = 1; number_i <= number; number_i++)
+                {
+                    takeInputAndAddToContacts(addressBook);
+                }
             }
             addressBook.print();
 
